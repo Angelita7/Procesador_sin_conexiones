@@ -3,16 +3,16 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.63 secs
+Total REAL time to Xst completion: 2.00 secs
+Total CPU time to Xst completion: 1.64 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.63 secs
+Total REAL time to Xst completion: 2.00 secs
+Total CPU time to Xst completion: 1.64 secs
  
---> Reading design: Pc.prj
+--> Reading design: Sumador.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -35,17 +35,17 @@ TABLE OF CONTENTS
 *                      Synthesis Options Summary                        *
 =========================================================================
 ---- Source Parameters
-Input File Name                    : "Pc.prj"
+Input File Name                    : "Sumador.prj"
 Input Format                       : mixed
 Ignore Synthesis Constraint File   : NO
 
 ---- Target Parameters
-Output File Name                   : "Pc"
+Output File Name                   : "Sumador"
 Output Format                      : NGC
 Target Device                      : xc3s500e-5-fg320
 
 ---- Source Options
-Top Module Name                    : Pc
+Top Module Name                    : Sumador
 Automatic FSM Extraction           : YES
 FSM Encoding Algorithm             : Auto
 Safe Implementation                : No
@@ -104,20 +104,20 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "C:/Users/GEORGE/Documents/Procesador/Procesador/Pc.vhd" in Library work.
-Architecture behavioral of Entity pc is up to date.
+Compiling vhdl file "C:/Users/GEORGE/Documents/Procesador/Procesador/Sumador.vhd" in Library work.
+Architecture behavioral of Entity sumador is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
 =========================================================================
-Analyzing hierarchy for entity <Pc> in library <work> (architecture <behavioral>).
+Analyzing hierarchy for entity <Sumador> in library <work> (architecture <behavioral>).
 
 
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
-Analyzing Entity <Pc> in library <work> (Architecture <behavioral>).
-Entity <Pc> analyzed. Unit <Pc> generated.
+Analyzing Entity <Sumador> in library <work> (Architecture <behavioral>).
+Entity <Sumador> analyzed. Unit <Sumador> generated.
 
 
 =========================================================================
@@ -126,20 +126,20 @@ Entity <Pc> analyzed. Unit <Pc> generated.
 
 Performing bidirectional port resolution...
 
-Synthesizing Unit <Pc>.
-    Related source file is "C:/Users/GEORGE/Documents/Procesador/Procesador/Pc.vhd".
-    Found 32-bit register for signal <Pc_out>.
+Synthesizing Unit <Sumador>.
+    Related source file is "C:/Users/GEORGE/Documents/Procesador/Procesador/Sumador.vhd".
+    Found 32-bit adder for signal <Resultsuma_out>.
     Summary:
-	inferred  32 D-type flip-flop(s).
-Unit <Pc> synthesized.
+	inferred   1 Adder/Subtractor(s).
+Unit <Sumador> synthesized.
 
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Registers                                            : 1
- 32-bit register                                       : 1
+# Adders/Subtractors                                   : 1
+ 32-bit adder                                          : 1
 
 =========================================================================
 
@@ -152,8 +152,8 @@ Macro Statistics
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Registers                                            : 32
- Flip-Flops                                            : 32
+# Adders/Subtractors                                   : 1
+ 32-bit adder                                          : 1
 
 =========================================================================
 
@@ -161,21 +161,18 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 
-Optimizing unit <Pc> ...
+Optimizing unit <Sumador> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block Pc, actual ratio is 0.
+Found area constraint ratio of 100 (+ 5) on block Sumador, actual ratio is 0.
 
 Final Macro Processing ...
 
 =========================================================================
 Final Register Report
 
-Macro Statistics
-# Registers                                            : 32
- Flip-Flops                                            : 32
-
+Found no macro
 =========================================================================
 
 =========================================================================
@@ -193,22 +190,23 @@ Partition Implementation Status
 *                            Final Report                               *
 =========================================================================
 Final Results
-RTL Top Level Output File Name     : Pc.ngr
-Top Level Output File Name         : Pc
+RTL Top Level Output File Name     : Sumador.ngr
+Top Level Output File Name         : Sumador
 Output Format                      : NGC
 Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 66
+# IOs                              : 96
 
 Cell Usage :
-# FlipFlops/Latches                : 32
-#      FDR                         : 32
-# Clock Buffers                    : 1
-#      BUFGP                       : 1
-# IO Buffers                       : 65
-#      IBUF                        : 33
+# BELS                             : 96
+#      GND                         : 1
+#      LUT2                        : 32
+#      MUXCY                       : 31
+#      XORCY                       : 32
+# IO Buffers                       : 96
+#      IBUF                        : 64
 #      OBUF                        : 32
 =========================================================================
 
@@ -217,11 +215,10 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-5 
 
- Number of Slices:                        0  out of   4656     0%  
- Number of IOs:                          66
- Number of bonded IOBs:                  66  out of    232    28%  
-    IOB Flip Flops:                      32
- Number of GCLKs:                         1  out of     24     4%  
+ Number of Slices:                       16  out of   4656     0%  
+ Number of 4 input LUTs:                 32  out of   9312     0%  
+ Number of IOs:                          96
+ Number of bonded IOBs:                  96  out of    232    41%  
 
 ---------------------------
 Partition Resource Summary:
@@ -241,11 +238,7 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 32    |
------------------------------------+------------------------+-------+
+No clock signals found in this design
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -256,61 +249,74 @@ Timing Summary:
 Speed Grade: -5
 
    Minimum period: No path found
-   Minimum input arrival time before clock: 2.974ns
-   Maximum output required time after clock: 4.040ns
-   Maximum combinational path delay: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: 8.401ns
 
 Timing Detail:
 --------------
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 64 / 64
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1552 / 32
 -------------------------------------------------------------------------
-Offset:              2.974ns (Levels of Logic = 1)
-  Source:            reset (PAD)
-  Destination:       Pc_out_0 (FF)
-  Destination Clock: clk rising
+Delay:               8.401ns (Levels of Logic = 35)
+  Source:            A_in<0> (PAD)
+  Destination:       Resultsuma_out<31> (PAD)
 
-  Data Path: reset to Pc_out_0
+  Data Path: A_in<0> to Resultsuma_out<31>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            32   1.106   1.073  reset_IBUF (reset_IBUF)
-     FDR:R                     0.795          Pc_out_0
+     IBUF:I->O             1   1.106   0.509  A_in_0_IBUF (A_in_0_IBUF)
+     LUT2:I0->O            1   0.612   0.000  Madd_Resultsuma_out_lut<0> (Madd_Resultsuma_out_lut<0>)
+     MUXCY:S->O            1   0.404   0.000  Madd_Resultsuma_out_cy<0> (Madd_Resultsuma_out_cy<0>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<1> (Madd_Resultsuma_out_cy<1>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<2> (Madd_Resultsuma_out_cy<2>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<3> (Madd_Resultsuma_out_cy<3>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<4> (Madd_Resultsuma_out_cy<4>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<5> (Madd_Resultsuma_out_cy<5>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<6> (Madd_Resultsuma_out_cy<6>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<7> (Madd_Resultsuma_out_cy<7>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<8> (Madd_Resultsuma_out_cy<8>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<9> (Madd_Resultsuma_out_cy<9>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<10> (Madd_Resultsuma_out_cy<10>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<11> (Madd_Resultsuma_out_cy<11>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<12> (Madd_Resultsuma_out_cy<12>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<13> (Madd_Resultsuma_out_cy<13>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<14> (Madd_Resultsuma_out_cy<14>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<15> (Madd_Resultsuma_out_cy<15>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<16> (Madd_Resultsuma_out_cy<16>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<17> (Madd_Resultsuma_out_cy<17>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<18> (Madd_Resultsuma_out_cy<18>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<19> (Madd_Resultsuma_out_cy<19>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<20> (Madd_Resultsuma_out_cy<20>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<21> (Madd_Resultsuma_out_cy<21>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<22> (Madd_Resultsuma_out_cy<22>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<23> (Madd_Resultsuma_out_cy<23>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<24> (Madd_Resultsuma_out_cy<24>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<25> (Madd_Resultsuma_out_cy<25>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<26> (Madd_Resultsuma_out_cy<26>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<27> (Madd_Resultsuma_out_cy<27>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<28> (Madd_Resultsuma_out_cy<28>)
+     MUXCY:CI->O           1   0.051   0.000  Madd_Resultsuma_out_cy<29> (Madd_Resultsuma_out_cy<29>)
+     MUXCY:CI->O           0   0.051   0.000  Madd_Resultsuma_out_cy<30> (Madd_Resultsuma_out_cy<30>)
+     XORCY:CI->O           1   0.699   0.357  Madd_Resultsuma_out_xor<31> (Resultsuma_out_31_OBUF)
+     OBUF:I->O                 3.169          Resultsuma_out_31_OBUF (Resultsuma_out<31>)
     ----------------------------------------
-    Total                      2.974ns (1.901ns logic, 1.073ns route)
-                                       (63.9% logic, 36.1% route)
+    Total                      8.401ns (7.535ns logic, 0.866ns route)
+                                       (89.7% logic, 10.3% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 32 / 32
--------------------------------------------------------------------------
-Offset:              4.040ns (Levels of Logic = 1)
-  Source:            Pc_out_31 (FF)
-  Destination:       Pc_out<31> (PAD)
-  Source Clock:      clk rising
-
-  Data Path: Pc_out_31 to Pc_out<31>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDR:C->Q              1   0.514   0.357  Pc_out_31 (Pc_out_31)
-     OBUF:I->O                 3.169          Pc_out_31_OBUF (Pc_out<31>)
-    ----------------------------------------
-    Total                      4.040ns (3.683ns logic, 0.357ns route)
-                                       (91.2% logic, 8.8% route)
-
-=========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.66 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.98 secs
  
 --> 
 
-Total memory usage is 256052 kilobytes
+Total memory usage is 256692 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

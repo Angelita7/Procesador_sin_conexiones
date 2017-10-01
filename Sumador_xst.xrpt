@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Xst" timeStamp="Sun Oct 01 16:33:13 2017">
+  <application stringID="Xst" timeStamp="Sun Oct 01 17:15:40 2017">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -50,12 +50,12 @@
       </table>
     </section>
     <section stringID="XST_OPTION_SUMMARY">
-      <item DEFAULT="" label="-ifn" stringID="XST_IFN" value="Pc.prj"/>
+      <item DEFAULT="" label="-ifn" stringID="XST_IFN" value="Sumador.prj"/>
       <item DEFAULT="MIXED" label="-ifmt" stringID="XST_IFMT" value="mixed"/>
-      <item DEFAULT="" label="-ofn" stringID="XST_OFN" value="Pc"/>
+      <item DEFAULT="" label="-ofn" stringID="XST_OFN" value="Sumador"/>
       <item DEFAULT="NGC" label="-ofmt" stringID="XST_OFMT" value="NGC"/>
       <item DEFAULT="" label="-p" stringID="XST_P" value="xc3s500e-5-fg320"/>
-      <item DEFAULT="" label="-top" stringID="XST_TOP" value="Pc"/>
+      <item DEFAULT="" label="-top" stringID="XST_TOP" value="Sumador"/>
       <item DEFAULT="SPEED" label="-opt_mode" stringID="XST_OPTMODE" value="Speed"/>
       <item DEFAULT="1" label="-opt_level" stringID="XST_OPTLEVEL" value="1"/>
       <item DEFAULT="NO" label="-iuc" stringID="XST_IUC" value="NO"/>
@@ -106,20 +106,16 @@
       <item DEFAULT="0%" label="-slice_utilization_ratio_maxmargin" stringID="XST_SLICEUTILIZATIONRATIOMAXMARGIN" value="5"/>
     </section>
     <section stringID="XST_HDL_SYNTHESIS_REPORT">
-      <item dataType="int" stringID="XST_REGISTERS" value="1">
-        <item dataType="int" stringID="XST_32BIT_REGISTER" value="1"/>
+      <item dataType="int" stringID="XST_ADDERSSUBTRACTORS" value="1">
+        <item dataType="int" stringID="XST_32BIT_ADDER" value="1"/>
       </item>
     </section>
     <section stringID="XST_ADVANCED_HDL_SYNTHESIS_REPORT">
-      <item dataType="int" stringID="XST_REGISTERS" value="32">
-        <item dataType="int" stringID="XST_FLIPFLOPS" value="32"/>
+      <item dataType="int" stringID="XST_ADDERSSUBTRACTORS" value="1">
+        <item dataType="int" stringID="XST_32BIT_ADDER" value="1"/>
       </item>
     </section>
-    <section stringID="XST_FINAL_REGISTER_REPORT">
-      <item dataType="int" stringID="XST_REGISTERS" value="32">
-        <item dataType="int" stringID="XST_FLIPFLOPS" value="32"/>
-      </item>
-    </section>
+    <section stringID="XST_FINAL_REGISTER_REPORTFOUND_NO_MACRO"/>
     <section stringID="XST_PARTITION_REPORT">
       <section stringID="XST_PARTITION_IMPLEMENTATION_STATUS">
         <section stringID="XST_NO_PARTITIONS_WERE_FOUND_IN_THIS_DESIGN"/>
@@ -127,34 +123,34 @@
     </section>
     <section stringID="XST_FINAL_REPORT">
       <section stringID="XST_FINAL_RESULTS">
-        <item stringID="XST_RTL_TOP_LEVEL_OUTPUT_FILE_NAME" value="Pc.ngr"/>
-        <item stringID="XST_TOP_LEVEL_OUTPUT_FILE_NAME" value="Pc"/>
+        <item stringID="XST_RTL_TOP_LEVEL_OUTPUT_FILE_NAME" value="Sumador.ngr"/>
+        <item stringID="XST_TOP_LEVEL_OUTPUT_FILE_NAME" value="Sumador"/>
         <item stringID="XST_OUTPUT_FORMAT" value="NGC"/>
         <item stringID="XST_OPTIMIZATION_GOAL" value="Speed"/>
         <item stringID="XST_KEEP_HIERARCHY" value="No"/>
       </section>
       <section stringID="XST_DESIGN_STATISTICS">
-        <item stringID="XST_IOS" value="66"/>
+        <item stringID="XST_IOS" value="96"/>
       </section>
       <section stringID="XST_CELL_USAGE">
-        <item dataType="int" stringID="XST_FLIPFLOPSLATCHES" value="32">
-          <item dataType="int" stringID="XST_FDR" value="32"/>
+        <item dataType="int" stringID="XST_BELS" value="96">
+          <item dataType="int" stringID="XST_GND" value="1"/>
+          <item dataType="int" stringID="XST_LUT2" value="32"/>
+          <item dataType="int" stringID="XST_MUXCY" value="31"/>
+          <item dataType="int" stringID="XST_XORCY" value="32"/>
         </item>
-        <item dataType="int" stringID="XST_CLOCK_BUFFERS" value="1">
-          <item dataType="int" stringID="XST_BUFGP" value="1"/>
-        </item>
-        <item dataType="int" stringID="XST_IO_BUFFERS" value="65">
-          <item dataType="int" stringID="XST_IBUF" value="33"/>
+        <item dataType="int" stringID="XST_IO_BUFFERS" value="96">
+          <item dataType="int" stringID="XST_IBUF" value="64"/>
           <item dataType="int" stringID="XST_OBUF" value="32"/>
         </item>
       </section>
     </section>
     <section stringID="XST_DEVICE_UTILIZATION_SUMMARY">
       <item stringID="XST_SELECTED_DEVICE" value="3s500efg320-5"/>
-      <item AVAILABLE="4656" dataType="int" label="Number of Slices" stringID="XST_NUMBER_OF_SLICES" value="0"/>
-      <item dataType="int" label="Number of IOs" stringID="XST_NUMBER_OF_IOS" value="66"/>
-      <item AVAILABLE="232" dataType="int" label="Number of bonded IOBs" stringID="XST_NUMBER_OF_BONDED_IOBS" value="66"/>
-      <item AVAILABLE="24" dataType="int" label="Number of GCLKs" stringID="XST_NUMBER_OF_GCLKS" value="1"/>
+      <item AVAILABLE="4656" dataType="int" label="Number of Slices" stringID="XST_NUMBER_OF_SLICES" value="16"/>
+      <item AVAILABLE="9312" dataType="int" label="Number of 4 input LUTs" stringID="XST_NUMBER_OF_4_INPUT_LUTS" value="32"/>
+      <item dataType="int" label="Number of IOs" stringID="XST_NUMBER_OF_IOS" value="96"/>
+      <item AVAILABLE="232" dataType="int" label="Number of bonded IOBs" stringID="XST_NUMBER_OF_BONDED_IOBS" value="96"/>
     </section>
     <section stringID="XST_PARTITION_RESOURCE_SUMMARY">
       <section stringID="XST_NO_PARTITIONS_WERE_FOUND_IN_THIS_DESIGN"/>

@@ -1,0 +1,6 @@
+[Inputs]
+=A_in[31:0]=
+=B_in[31:0]=
+[Outputs]
+=Resultsuma_out[31:0]=
+[BiDir]
