@@ -1,0 +1,2 @@
+vhdl work "Memoria_instrucciones.vhd"
+vhdl work "MI_testBench.vhd"
