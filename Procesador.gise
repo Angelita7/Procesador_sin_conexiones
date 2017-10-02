@@ -77,6 +77,13 @@
     <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="Pc_usage.xml"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Pc_vhdl.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Pc_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="RF_testBench_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="RF_testBench_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="RF_testBench_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="RF_testBench_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Register_File.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Register_File.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Register_File.xst"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="Sumador.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="Sumador.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="Sumador.ngc"/>
@@ -116,22 +123,25 @@
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1506887489" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1506887489">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1506899277" xil_pn:in_ck="4933139211881021697" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1506899277">
+    <transform xil_pn:end_ts="1506902999" xil_pn:in_ck="-8244918606806374980" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1506902999">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="MI_testBench.vhd"/>
       <outfile xil_pn:name="Memoria_instrucciones.vhd"/>
       <outfile xil_pn:name="Pc.vhd"/>
       <outfile xil_pn:name="Pc_testBench.vhd"/>
+      <outfile xil_pn:name="RF_testBench.vhd"/>
+      <outfile xil_pn:name="Register_File.vhd"/>
       <outfile xil_pn:name="Sumador.vhd"/>
       <outfile xil_pn:name="Sumador_TestBench.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1506899095" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="4608185580128284747" xil_pn:start_ts="1506899095">
+    <transform xil_pn:end_ts="1506902432" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="6989573483530927085" xil_pn:start_ts="1506902432">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1506899095" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-1713373472367652083" xil_pn:start_ts="1506899095">
+    <transform xil_pn:end_ts="1506902432" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-1505952221147802833" xil_pn:start_ts="1506902432">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -139,40 +149,42 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1506899281" xil_pn:in_ck="4933139211881021697" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1506899281">
+    <transform xil_pn:end_ts="1506903005" xil_pn:in_ck="-8244918606806374980" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1506903005">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="MI_testBench.vhd"/>
       <outfile xil_pn:name="Memoria_instrucciones.vhd"/>
       <outfile xil_pn:name="Pc.vhd"/>
       <outfile xil_pn:name="Pc_testBench.vhd"/>
+      <outfile xil_pn:name="RF_testBench.vhd"/>
+      <outfile xil_pn:name="Register_File.vhd"/>
       <outfile xil_pn:name="Sumador.vhd"/>
       <outfile xil_pn:name="Sumador_TestBench.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1506899286" xil_pn:in_ck="4933139211881021697" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-5606304435135600808" xil_pn:start_ts="1506899281">
+    <transform xil_pn:end_ts="1506903011" xil_pn:in_ck="-8244918606806374980" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="4417301485452992988" xil_pn:start_ts="1506903005">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="MI_testBench_beh.prj"/>
-      <outfile xil_pn:name="MI_testBench_isim_beh.exe"/>
+      <outfile xil_pn:name="RF_testBench_beh.prj"/>
+      <outfile xil_pn:name="RF_testBench_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1506899286" xil_pn:in_ck="-6085128212032496219" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="4197279055802230277" xil_pn:start_ts="1506899286">
+    <transform xil_pn:end_ts="1506903011" xil_pn:in_ck="-8129608317183131248" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-3247917684353207" xil_pn:start_ts="1506903011">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="MI_testBench_isim_beh.wdb"/>
+      <outfile xil_pn:name="RF_testBench_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
     </transform>
     <transform xil_pn:end_ts="1506885824" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1506885824">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1506898577" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="6109057685356631884" xil_pn:start_ts="1506898577">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
     </transform>
   </transforms>
 

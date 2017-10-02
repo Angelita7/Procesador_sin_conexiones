@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "C:/Users/GEORGE/Documents/Procesador/Procesador/MI_testBench_isim_beh.exe" -prj "C:/Users/GEORGE/Documents/Procesador/Procesador/MI_testBench_beh.prj" "work.MI_testBench" 
+-intstyle "ise" -incremental -o "C:/Users/GEORGE/Documents/Procesador/Procesador/RF_testBench_isim_beh.exe" -prj "C:/Users/GEORGE/Documents/Procesador/Procesador/RF_testBench_beh.prj" "work.RF_testBench" 
